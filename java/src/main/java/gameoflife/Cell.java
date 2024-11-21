@@ -1,23 +1,18 @@
 package gameoflife;
 
-/**
- *
- */
 public class Cell {
 
-    public boolean isAlive;
+    private boolean alive;
 
-    /**
-     * @param isAlive
-     */
-    public Cell(boolean isAlive) {
-        this.isAlive = isAlive;
+    public Cell(boolean alive) {
+        this.alive = alive;
     }
 
-    /**
-     * @return
-     */
     public boolean isAlive() {
-        return isAlive;
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
     }
 }

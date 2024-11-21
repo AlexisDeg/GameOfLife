@@ -9,5 +9,8 @@
         <module name="gameoflife" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gameoflife" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>

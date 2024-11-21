@@ -11,7 +11,7 @@ public class GridManagerTest {
         Cell[][] grid = new Cell[1][1];
         Cell[][] newGrid = gridManager.calculateNewState(grid);
 
-        Assertions.assertThat(newGrid[0][0].isAlive).isFalse();
+        Assertions.assertThat(newGrid[0][0].isAlive()).isFalse();
     }
 
     @Test
@@ -19,13 +19,13 @@ public class GridManagerTest {
         GridManager gridManager = new GridManager();
 
         Cell[][] grid = initializeGrid(3, 3);
-        grid[0][2].isAlive = true;
-        grid[1][1].isAlive = true;
-        grid[2][0].isAlive = true;
+        grid[0][2].setAlive(true);
+        grid[1][1].setAlive(true);
+        grid[2][0].setAlive(true);
 
         Cell[][] newGrid = gridManager.calculateNewState(grid);
 
-        Assertions.assertThat(newGrid[1][1].isAlive).isTrue();
+        Assertions.assertThat(newGrid[1][1].isAlive()).isTrue();
     }
 
     @Test
@@ -33,14 +33,14 @@ public class GridManagerTest {
         GridManager gridManager = new GridManager();
 
         Cell[][] grid = initializeGrid(2, 4);
-        grid[1][0].isAlive = true;
-        grid[1][1].isAlive = true;
-        grid[1][2].isAlive = true;
+        grid[1][0].setAlive(true);
+        grid[1][1].setAlive(true);
+        grid[1][2].setAlive(true);
 
         Cell[][] newGrid = gridManager.calculateNewState(grid);
 
-        Assertions.assertThat(newGrid[1][0].isAlive).isFalse();
-        Assertions.assertThat(newGrid[1][2].isAlive).isFalse();
+        Assertions.assertThat(newGrid[1][0].isAlive()).isFalse();
+        Assertions.assertThat(newGrid[1][2].isAlive()).isFalse();
     }
 
     @Test
@@ -48,13 +48,13 @@ public class GridManagerTest {
         GridManager gridManager = new GridManager();
 
         Cell[][] grid = initializeGrid(2, 3);
-        grid[0][1].isAlive = true;
-        grid[1][0].isAlive = true;
-        grid[1][1].isAlive = true;
+        grid[0][1].setAlive(true);
+        grid[1][0].setAlive(true);
+        grid[1][1].setAlive(true);
 
         Cell[][] newGrid = gridManager.calculateNewState(grid);
 
-        Assertions.assertThat(newGrid[0][0].isAlive).isTrue();
+        Assertions.assertThat(newGrid[0][0].isAlive()).isTrue();
     }
 
     @Test
@@ -62,15 +62,15 @@ public class GridManagerTest {
         GridManager gridManager = new GridManager();
 
         Cell[][] grid = initializeGrid(4, 3);
-        grid[0][2].isAlive = true;
-        grid[1][1].isAlive = true;
-        grid[2][0].isAlive = true;
-        grid[2][1].isAlive = true;
-        grid[2][2].isAlive = true;
+        grid[0][2].setAlive(true);
+        grid[1][1].setAlive(true);
+        grid[2][0].setAlive(true);
+        grid[2][1].setAlive(true);
+        grid[2][2].setAlive(true);
 
         Cell[][] newGrid = gridManager.calculateNewState(grid);
 
-        Assertions.assertThat(newGrid[1][1].isAlive).isFalse();
+        Assertions.assertThat(newGrid[1][1].isAlive()).isFalse();
     }
 
     @Test
@@ -80,9 +80,9 @@ public class GridManagerTest {
         int h = 2;
         int w = 3;
         Cell[][] grid = initializeGrid(h, w);
-        grid[0][1].isAlive = true;
-        grid[1][0].isAlive = true;
-        grid[1][1].isAlive = true;
+        grid[0][1].setAlive(true);
+        grid[1][0].setAlive(true);
+        grid[1][1].setAlive(true);
 
         int nbNeighbours = gridManager.countNeighbours(grid, 0, 1);
 
